@@ -13,7 +13,7 @@ import movies from "../movies.json";
 <header class="lg:flex justify-between py-10 gap-5 mx-auto">
   <Astronav closeOnClick>
     <div class="flex w-full lg:w-auto justify-between">
-      <a href="/" class="logo">
+      <a href="/jimena" class="logo">
         <h1>JIMENA AZULA</h1>
         <p>PRODUCTION DESIGNER</p>
       </a>
@@ -47,7 +47,7 @@ import movies from "../movies.json";
                   {
                     movies.map(({ title, slug }) => (
                       <li>
-                        <a class="block menu-link" href={`/${slug}`}>
+                        <a class="block menu-link" href={`/jimena/${slug}`}>
                           {title}
                         </a>
                       </li>
