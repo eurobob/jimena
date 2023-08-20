@@ -8,7 +8,7 @@ import movies from "../movies.json";
     <div class="grid">
       {
         movies.map((movie) => (
-          <a href={`/${movie.slug}`} class="movie-tile">
+          <a href={`/jimena/${movie.slug}`} class="movie-tile">
             <img src={movie.poster} alt={movie.title} />
           </a>
         ))
