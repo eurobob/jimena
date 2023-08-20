@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div class="about">
+      <img src="images/about.webp" alt="" />
+      <div>
+        <p>
+          <strong>Jimena Azula</strong> is a Peruvian production designer from New
+          York City with over sixteen years of film and television experience.
+        </p>
+
+        <p>
+          With degrees in Interior Design from IED Barcelona and Fine Art from
+          SVA New York, Jimena has a breadth of experience balancing both the
+          practical and the artistic.
+        </p>
+
+        <p>
+          Since 2004 Jimena has found herself at home in the dynamic hustle of
+          New York City, working on everything from major feature films, to
+          independent movies, music videos, events and commercials.
+        </p>
+
+        <p>
+          As production designer, some of her credits include: 'See You
+          Yesterday' (produced by Spike Lee, nominated at Tribeca Film
+          Festival), 'Here & Now' (produced by and starring Sarah Jessica
+          Parker),' Saturday Church' (Kaleidoscope Best Film award), 'and Viejos
+          Amigos' (Titra Prize: Best Movie, Lima Film Festival). She has also
+          frequently collaborated in the films of the artist Daniel Arsham that
+          led to them later exhibiting one of the set pieces of an airplane
+          cockpit for Art Basel 2015.
+        </p>
+
+        <p>
+          When not making movies, Jimena has also worked on music videos for
+          artists such as Charlotte Gainsbourg and Vancouver Sleep Clinic, and
+          created commercials for the likes of Nike, Adidas, and Beats.
+        </p>
+
+        <p>
+          Jimena's enduring passion for the visual arts encompasses a career
+          spanning almost two decades of world-building and aesthetic design,
+          and it is on the screen that her work feels most at home.
+        </p>
+
+        <a href="http://www.imdb.com/name/nm1738956/?ref_=fn_al_nm_1">imdb</a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+  .about img {
+    flex: 1;
+  }
+
+  .about div {
+    flex: 3;
+  }
+</style>

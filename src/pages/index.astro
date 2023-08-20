@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import movies from "../movies.json";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div class="grid">
+      {
+        movies.map((movie) => (
+          <a href={`/${movie.slug}`} class="movie-tile">
+            <img src={movie.poster} alt={movie.title} />
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
+
+<script>
+  import "../scripts/masonry.js";
+</script>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .movie-tile {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .movie-tile img {
+    /* width: 100%; */
+    transition: opacity 0.2s ease-in-out;
+  }
+  .movie-tile:hover img {
+    opacity: 0.5;
+  }
+
+  @media (min-width: 500px) {
+    .movie-tile {
+      width: 185px;
+    }
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import Layout from "../layouts/Layout.astro";
+import movies from "../movies.json";
+
+export async function getStaticPaths() {
+  return movies.map((movie) => ({
+    params: {
+      slug: movie.slug,
+    },
+    props: movie,
+  }));
+}
+
+const { title, poster, images, video } = Astro.props;
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    {video && <YouTube id={video} class="mx-auto" />}
+    <br />
+    {
+      images &&
+        images.map((img) => <img class="movie-image" src={img} alt={title} />)
+    }
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .movie-image {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+</style>
