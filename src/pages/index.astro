@@ -5,7 +5,7 @@ import movies from "../movies.json";
 
 <Layout title="Welcome to Astro.">
   <main>
-    <div class="grid">
+    <div class="tiles">
       {
         movies.map((movie) => (
           <a href={`/jimena/${movie.slug}`} class="movie-tile">
@@ -17,10 +17,6 @@ import movies from "../movies.json";
   </main>
 </Layout>
 
-<script>
-  import "../scripts/masonry.js";
-</script>
-
 <style>
   main {
     margin: auto;
@@ -28,27 +24,42 @@ import movies from "../movies.json";
     width: 100%;
   }
 
-  .grid {
+  .tiles {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    columns: 6 200px;
   }
 
   .movie-tile {
-    width: 100%;
-    margin-bottom: 15px;
+    /* width: 100%; */
+    display: block;
+    margin: 0 0 1rem 0;
   }
 
   .movie-tile img {
-    /* width: 100%; */
+    width: 100%;
     transition: opacity 0.2s ease-in-out;
   }
   .movie-tile:hover img {
     opacity: 0.5;
   }
 
-  @media (min-width: 500px) {
+  /* @media (min-width: 768px) {
+    .movie-tile {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .movie-tile {
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 1200px) {
     .movie-tile {
       width: 185px;
     }
-  }
+  } */
 </style>

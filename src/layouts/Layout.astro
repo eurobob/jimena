@@ -1,6 +1,7 @@
 ---
-import masonry from "masonry-layout/dist/masonry.pkgd.min?url";
-import imagesLoaded from "imagesloaded/imagesloaded.pkgd.min?url";
+// import masonry from "masonry-layout/dist/masonry.pkgd.min?url";
+// import imagesLoaded from "imagesloaded/imagesloaded.pkgd.min?url";
+// import Bricks from "bricks.js/dist/bricks.js?url";
 
 import Header from "../components/Header.astro";
 
@@ -49,8 +50,9 @@ const { title } = Astro.props;
     <Header />
     <slot />
   </body>
-  <script src={imagesLoaded}></script>
+  <!-- <script src={imagesLoaded}></script>
   <script src={masonry}></script>
+  <script src={Bricks}></script> -->
 </html>
 <style is:global>
   :root {
