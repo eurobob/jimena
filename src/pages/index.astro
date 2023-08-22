@@ -19,6 +19,10 @@ import movies from "../movies.json";
   </main>
 </Layout>
 
+<script>
+	import "../scripts/masonry.js";
+  </script>
+
 <style>
   main {
     margin: auto;
@@ -30,7 +34,7 @@ import movies from "../movies.json";
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    columns: 6 200px;
+    /* columns: 6 200px; */
     /* display: flex;
     flex-direction: column; */
     /* flex-flow: column wrap; */
@@ -47,12 +51,14 @@ import movies from "../movies.json";
   .movie-tile {
     /* flex: 1; */
     /* width: 100%; */
-    display: inline-block;
+    /* display: inline-block; */
     margin: 0 0 1rem 0;
     /* min-height: 100px; */
+	width: 185px;
+	transition: opacity 0.2s ease-in-out;
   }
 
-  .movie-tile:nth-child(3n + 1) {
+  /* .movie-tile:nth-child(3n + 1) {
     order: 1;
   }
   .movie-tile:nth-child(3n + 2) {
@@ -60,13 +66,12 @@ import movies from "../movies.json";
   }
   .movie-tile:nth-child(3n) {
     order: 3;
-  }
+  } */
 
   .movie-tile img {
     width: 100%;
-    transition: opacity 0.2s ease-in-out;
   }
-  .movie-tile:hover img {
+  .movie-tile:hover {
     opacity: 0.5;
   }
 </style>
