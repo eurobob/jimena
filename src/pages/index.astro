@@ -1,4 +1,6 @@
 ---
+import { Img } from "astro-imagetools/components";
+
 import Layout from "../layouts/Layout.astro";
 import movies from "../movies.json";
 ---
@@ -9,7 +11,7 @@ import movies from "../movies.json";
       {
         movies.map((movie) => (
           <a href={`/jimena/${movie.slug}`} class="movie-tile">
-            <img src={movie.poster} alt={movie.title} />
+            <Img src={movie.poster} alt={movie.title} placeholder="blurred" />
           </a>
         ))
       }
@@ -29,12 +31,35 @@ import movies from "../movies.json";
     max-width: 1200px;
     margin: 0 auto;
     columns: 6 200px;
+    /* display: flex;
+    flex-direction: column; */
+    /* flex-flow: column wrap; */
   }
 
+  /* .tiles::before,
+  .tiles::after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
+    order: 2;
+  } */
+
   .movie-tile {
+    /* flex: 1; */
     /* width: 100%; */
-    display: block;
+    display: inline-block;
     margin: 0 0 1rem 0;
+    /* min-height: 100px; */
+  }
+
+  .movie-tile:nth-child(3n + 1) {
+    order: 1;
+  }
+  .movie-tile:nth-child(3n + 2) {
+    order: 2;
+  }
+  .movie-tile:nth-child(3n) {
+    order: 3;
   }
 
   .movie-tile img {
@@ -44,22 +69,4 @@ import movies from "../movies.json";
   .movie-tile:hover img {
     opacity: 0.5;
   }
-
-  /* @media (min-width: 768px) {
-    .movie-tile {
-      width: 300px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .movie-tile {
-      width: 300px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .movie-tile {
-      width: 185px;
-    }
-  } */
 </style>
