@@ -1,4 +1,5 @@
 ---
+import { Img } from "astro-imagetools/components";
 import { YouTube } from "@astro-community/astro-embed-youtube";
 import Layout from "../layouts/Layout.astro";
 import movies from "../movies.json";
@@ -15,13 +16,13 @@ export async function getStaticPaths() {
 const { title, poster, images, video } = Astro.props;
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Jimena Azula">
   <main>
     {video && <YouTube id={video} class="mx-auto" />}
     <br />
     {
       images &&
-        images.map((img) => <img class="movie-image" src={img} alt={title} />)
+        images.map((img) => <Img attributes={{img: { class:"movie-image"}}} src={img} alt={title} placeholder="blurred"/>)
     }
   </main>
 </Layout>
