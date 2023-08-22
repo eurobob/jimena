@@ -1,0 +1,65 @@
+---
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+import Layout from "../layouts/Layout.astro";
+
+const videos = [
+    'rAu6y6uBqPc',
+    'dpVVa7xzCq0',
+    'Auo9kAljXyc',
+    'OD2WjnYwl4Y',
+    'OvvWwys7nU4'
+];
+---
+
+<Layout title="MUSIC VIDEOS | jimenaazula">
+  <main>
+    <div class="videos">
+      {
+        videos.map((id) => (
+            <div class="video">
+                <YouTube id={id} />
+            </div>
+            ))
+        }
+        <div class="video">
+            <iframe src="https://player.vimeo.com/video/309332608" />
+    </div>
+      
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .videos {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .video {
+    min-width: 100%;
+    flex: 1;
+  }
+
+  .video iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .video {
+      min-width: 40%;
+    }
+  }
+</style>
